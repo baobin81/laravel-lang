@@ -78,6 +78,8 @@ return [
     'email_has_registed' => '邮箱 :email 已经注册过！',
 ];
 ```
+> :email 语言包变量
+
 然后在任何地方：
 
 ```php
@@ -112,7 +114,12 @@ examples:
 ```shell
 $ php artisan lang:publish zh-CN,zh-HK,th,tk
 ```
+> 执行这句话有什么义意？将“翻译文件”将哪里的翻译文件
 
+> 提示'cp' is not recognized as an internal or external command.operable program or batch file.
+published languages(no overwrite):["zh-CN"].
+
+> windows 不支持CP，修改`vendor\overtrue\laravel-lang\src\Commands\Publish.php`文件的109行，把cp改成copy。'cp'is ....提示可以去掉.
 # License
 
 MIT
